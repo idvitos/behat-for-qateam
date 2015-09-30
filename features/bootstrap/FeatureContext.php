@@ -19,10 +19,10 @@ class FeatureContext extends MinkContext
     /**
      * @Given I am searching for :arg2
      */
-    public function iAmSearchingFor($arg2) //Searching...
+    public function iAmSearchingFor($arg1) //Searching...
     {
         $page = $this->getSession()->getPage();
-        $page->fillField("lst-ib", $arg2);
+        $page->fillField("lst-ib", $arg1);
         $page->find("css", "button[name=btnG]")->click();
         $this->getSession()->wait(1000);
     }
