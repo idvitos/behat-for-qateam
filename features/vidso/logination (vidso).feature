@@ -3,7 +3,7 @@ Feature: Logination
   As a customer
   I need to be able to login
   
-  @javascript @1
+  @javascript @1 @login
   Scenario: Succesfull login with valid data
     Given I am on "/en"
     When I follow "Login"
