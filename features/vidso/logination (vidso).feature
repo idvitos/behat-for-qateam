@@ -3,7 +3,7 @@ Feature: Logination
   As a customer
   I need to be able to login
   
-  @javascript @1 @login
+  @javascript @vidso @1
   Scenario: Succesfull login with valid data
     Given I am on "/en"
     When I follow "Login"
@@ -12,7 +12,7 @@ Feature: Logination
     And I press "Log in"
     Then I should see "Logout"
 
-  @javascript @2
+  @javascript @vidso @2
   Scenario: Failed login with invalid password
     Given I am on "/en"
     When I follow "Login"
@@ -22,7 +22,7 @@ Feature: Logination
     Then I should not see "Logout"
     And I should see "Sorry, unrecognized username or password"
 
-  @javascript @3
+  @javascript @vidso @3
   Scenario: Failed login with invalid E-mail
     Given I am on "/en"
     When I follow "Login"
@@ -32,7 +32,7 @@ Feature: Logination
     Then I should not see "Logout"
     And I should see "Sorry, unrecognized username or password"
 
-  @javascript @4
+  @javascript @vidso @4
   Scenario: Failed login without Login and E-Mail
     Given I am on "/en"
     When I follow "Login"
@@ -41,7 +41,7 @@ Feature: Logination
     And I should see "E-mail field is required"
     And I should see "Password field is required"
  
-  @javascript @5
+  @javascript @vidso @5
   Scenario: Password recovery with valid e-mail
     Given I am on "/en"
     When I follow "Login"
