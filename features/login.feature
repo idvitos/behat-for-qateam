@@ -44,7 +44,7 @@ Scenario: Log in with valid data
 
 
 @javascript @5
-Scenario: Steps when user forgot password
+Scenario: User can reset the password if he forgot it
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
    And I follow "Forgot password?"
