@@ -8,8 +8,8 @@ Feature: Log in
 Scenario: User Can not log in with invalid e-mail
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
-   And I fill in "E-mail or username" with "v.popov@internetdevels.ua" 
-   And I fill in "Password" with "1" 
+   And I fill in "E-mail or username" with "somename@internetdevels.ua" 
+   And I fill in "Password" with "some pass" 
    And I press "Log in"
    Then I should see "Sorry, unrecognized username or password"
 
@@ -18,7 +18,7 @@ Scenario: User Can not log in with invalid e-mail
 Scenario: User can not log in with invalid password
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
-   And I fill in "E-mail or username" with "v.popovych+org11@internetdevels.ua" 
+   And I fill in "E-mail or username" with "somename@internetdevels.ua" 
    And I fill in "Password" with "111" 
    And I press "Log in"
    Then I should see "Sorry, unrecognized username or password"
@@ -37,8 +37,8 @@ Scenario: Attempt to log in with empty fields
 Scenario: Log in with valid data
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
-   And I fill in "E-mail or username" with "v.popovych+org11@internetdevels.ua" 
-   And I fill in "Password" with "1" 
+   And I fill in "E-mail or username" with "somename@internetdevels.ua" 
+   And I fill in "Password" with "some pass" 
    And I press "Log in"
    Then I should see "Log Out"
 
@@ -48,7 +48,7 @@ Scenario: User can reset the password if he forgot it
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
    And I follow "Forgot password?"
-   And I fill in "Enter your e-mail" with "v.popovych+org11@internetdevels.ua"
+   And I fill in "Enter your e-mail" with "somename@internetdevels.ua"
    And I press "Send new password"
    Then I should see "Further instructions have been sent to your e-mail address"
 
@@ -57,12 +57,12 @@ Scenario: User can reset the password if he forgot it
 Scenario: Failed attempt to log in with invalid data and steps when forgot password
    Given I am on "http://meego.drupalcompany.com/"
    When I follow "Log in"
-   And I fill in "E-mail or username" with "v.popovych+org11@internetdevels.ua" 
+   And I fill in "E-mail or username" with "somename@internetdevels.ua" 
    And I fill in "Password" with "234567" 
    And I press "Log in"
    Then I should see "Have you forgotten your password?"
    And I follow "Have you forgotten your password?"
-   And I fill in "Enter your e-mail" with "v.popovych+org11@internetdevels.ua"
+   And I fill in "Enter your e-mail" with "somename@internetdevels.ua"
    And I press "Send new password"
    Then I should see "Further instructions have been sent to your e-mail address"
 
